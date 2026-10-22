@@ -1,6 +1,7 @@
 {
   "mcpServers": {
     "hpm-pintool-helper": {
+      "type": "http",
       "url": "https://tools.hpmicro.com/api/mcp"
     }
   }
