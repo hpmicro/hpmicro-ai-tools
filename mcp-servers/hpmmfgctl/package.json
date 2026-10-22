@@ -1,6 +1,6 @@
 {
   "name": "@hpmicro-tools/hpmmfgctl",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "HPM Manufacturing Tool stdio MCP server",
   "license": "MIT",
   "repository": {
