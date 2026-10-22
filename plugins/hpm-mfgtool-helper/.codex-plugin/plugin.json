@@ -1,0 +1,19 @@
+{
+  "name": "hpm-mfgtool-helper",
+  "version": "0.2.0",
+  "description": "Discover HPM devices and perform manufacturing ROM operations through the installed Manufacturing CMD.",
+  "author": {
+    "name": "HPMicro"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "HPM Manufacturing",
+    "shortDescription": "Discover, program, and inspect HPM ROM targets.",
+    "longDescription": "Configure Manufacturing CMD, discover serial and HID devices, and query, read, program, erase, load, or reset HPM ROM targets.",
+    "developerName": "HPMicro",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": "Check my manufacturing setup and discover connected HPM devices."
+  },
+  "mcpServers": "./.mcp.json"
+}

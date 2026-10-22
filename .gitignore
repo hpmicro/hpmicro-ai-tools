@@ -1,0 +1,6 @@
+bin/config.json
+**/node_modules/
+**/dist/
+**/coverage/
+**/*.tsbuildinfo
+**/.test-bin/

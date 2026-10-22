@@ -1,0 +1,7 @@
+{
+  "name": "hpm-mfgtool-helper",
+  "description": "HPM Manufacturing ROM tools for serial and HID devices",
+  "version": "0.2.0",
+  "skills": "./skills/",
+  "author": { "name": "HPMicro" }
+}

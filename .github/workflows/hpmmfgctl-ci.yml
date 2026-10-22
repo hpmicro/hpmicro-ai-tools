@@ -1,0 +1,39 @@
+name: hpmmfgctl CI
+on:
+  push:
+    paths: ['mcp-servers/hpmmfgctl/**', 'plugins/hpm-mfgtool-helper/**', '.github/workflows/hpmmfgctl-ci.yml', '.gitattributes']
+  pull_request:
+    paths: ['mcp-servers/hpmmfgctl/**', 'plugins/hpm-mfgtool-helper/**', '.github/workflows/hpmmfgctl-ci.yml', '.gitattributes']
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: ['22', '24']
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: mcp-servers/hpmmfgctl
+    steps:
+      - uses: actions/checkout@v6
+      - name: Verify checkout revision and line endings
+        run: |
+          git rev-parse HEAD
+          git check-attr text eol -- src/main.ts package.json
+          git ls-files --eol .prettierrc.json src/main.ts package.json
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '${{ matrix.node }}'
+          cache: npm
+          cache-dependency-path: mcp-servers/hpmmfgctl/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run format:check
+      - run: npm run typecheck
+      - run: npm run build
+      - run: npm test
+      - run: node --input-type=module -e "import { SystemEnumerator } from './dist/device/enumerator.js'; const enumerator = new SystemEnumerator(); await enumerator.listSerial(); await enumerator.listHID(13495, 0);"
+      - run: npm pack --dry-run

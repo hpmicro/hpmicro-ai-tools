@@ -1,0 +1,39 @@
+name: Feature request / 功能建议
+description: Discuss features, new plugins/MCP servers, or major changes / 讨论功能及较大改动
+title: "[Feature] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English or Chinese is welcome. Discuss substantial changes before implementation.
+        可使用中文或英文。新插件、MCP、重构和不兼容变更请先讨论再实现。
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and use case / 问题与使用场景
+      description: Explain the user need, affected component, and relevant existing issues.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution / 建议方案
+      description: Include scope; for a new plugin/MCP, describe language, dependencies, testing and release needs.
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility and risks / 兼容性与风险
+      description: Consider CLI/MCP/config contracts, platforms, security and hardware effects. State unknowns.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives / 替代方案
+  - type: textarea
+    id: contribution
+    attributes:
+      label: Contribution plan / 贡献计划
+      description: Optionally describe what you can implement or validate; no commitment is required.

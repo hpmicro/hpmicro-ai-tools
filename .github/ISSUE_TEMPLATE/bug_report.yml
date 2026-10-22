@@ -1,0 +1,52 @@
+name: Bug report / 问题报告
+description: Report a reproducible issue / 报告可复现的问题
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English or Chinese is welcome. Search existing issues first.
+        可使用中文或英文。先搜索已有 Issue。
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component / 组件
+      options:
+        - hpmsdkctl CLI
+        - hpmsdkctl MCP
+        - hpm-sdk-plugin / skills
+        - Marketplace / installation
+        - CI / documentation / other
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Versions and environment / 版本与环境
+      description: Package/plugin version or commit, OS, Node/npm, client; SDK/tools/board if relevant. Mark unknown or unavailable items.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction / 复现步骤
+      description: Provide minimal commands or steps with safe, redacted inputs.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior / 预期与实际行为
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Redacted logs / 脱敏日志
+      description: Remove tokens, credentials, private paths and identifying data.
+      render: text
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation scope / 验证范围
+      description: State whether this involved mock/unit tests, a real SDK, or target hardware; include workarounds if any.

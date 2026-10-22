@@ -1,0 +1,18 @@
+{
+  "name": "hpm-knowledgebase",
+  "version": "0.1.0",
+  "description": "Connect to the remote HPMicro knowledgebase MCP service.",
+  "author": {
+    "name": "HPMicro"
+  },
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "HPM Knowledgebase",
+    "shortDescription": "Query the remote HPMicro knowledgebase.",
+    "longDescription": "Connect to the configured remote HPMicro knowledgebase MCP service for technical information.",
+    "developerName": "HPMicro",
+    "category": "Engineering",
+    "capabilities": ["Read"],
+    "defaultPrompt": "Search the HPM knowledgebase for my technical question."
+  }
+}

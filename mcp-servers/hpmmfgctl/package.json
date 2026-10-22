@@ -1,0 +1,53 @@
+{
+  "name": "@hpmicro-tools/hpmmfgctl",
+  "version": "0.0.0",
+  "description": "HPM Manufacturing Tool stdio MCP server",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hpmicro/hpmicro-ai-tools.git",
+    "directory": "mcp-servers/hpmmfgctl"
+  },
+  "type": "module",
+  "bin": {
+    "hpmmfgctl": "dist/main.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "README.zh-CN.md"
+  ],
+  "engines": {
+    "node": ">=22.15.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.test.json",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepublishOnly": "npm run lint && npm run format:check && npm run typecheck && npm run build && npm test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.0.0",
+    "@serialport/bindings-cpp": "^13.0.0",
+    "iconv-lite": "^0.7.0",
+    "node-hid": "^3.2.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@modelcontextprotocol/client": "2.0.0",
+    "@types/node": "^22.18.0",
+    "eslint": "^10.10.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.70.0",
+    "vitest": "5.0.1"
+  }
+}

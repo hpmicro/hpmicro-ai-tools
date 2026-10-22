@@ -1,0 +1,8 @@
+{
+  "name": "hpm-knowledgebase",
+  "version": "0.1.0",
+  "description": "Connect to the remote HPMicro knowledgebase MCP service.",
+  "author": {
+    "name": "HPMicro"
+  }
+}

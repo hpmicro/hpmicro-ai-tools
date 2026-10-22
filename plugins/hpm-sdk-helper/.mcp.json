@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "hpm-sdk-ctl": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "--yes",
+        "--registry=https://registry.npmjs.org/",
+        "@hpmicro-tools/hpmsdkctl",
+        "mcp"
+      ]
+    }
+  }
+}

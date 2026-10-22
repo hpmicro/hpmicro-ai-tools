@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "hpm-pintool-helper": {
+      "url": "https://tools.hpmicro.com/api/mcp"
+    }
+  }
+}

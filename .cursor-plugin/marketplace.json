@@ -1,0 +1,54 @@
+{
+  "name": "hpm-sdk-marketplace",
+  "displayName": "HPM SDK Marketplace",
+  "owner": {
+    "name": "HPMicro"
+  },
+  "metadata": {
+    "description": "HPMicro SDK marketplace: tools for configuring, compiling, debugging, and flashing programs based on hpm_sdk.",
+    "version": "0.1.0",
+    "pluginRoot": "plugins"
+  },
+  "plugins": [
+    {
+      "name": "hpm-sdk-helper",
+      "source": "hpm-sdk-helper",
+      "description": "HPMicro SDK plugin for configuring, compiling, debugging, and flashing programs based on hpm_sdk.",
+      "version": "0.1.0",
+      "author": {
+        "name": "HPMicro"
+      },
+      "category": "Engineering"
+    },
+    {
+      "name": "hpm-mfgtool-helper",
+      "source": "hpm-mfgtool-helper",
+      "description": "HPM Manufacturing ROM tools for serial and HID devices",
+      "version": "0.1.0",
+      "author": {
+        "name": "HPMicro"
+      },
+      "category": "Engineering"
+    },
+    {
+      "name": "hpm-knowledgebase",
+      "version": "0.1.0",
+      "description": "Connect to the remote HPMicro knowledgebase MCP service.",
+      "author": {
+        "name": "HPMicro"
+      },
+      "source": "hpm-knowledgebase",
+      "category": "Engineering"
+    },
+    {
+      "name": "hpm-pintool-helper",
+      "description": "Query HPMicro pinmux, TRGM, GPIOM, clocks, and PLA; generate C code, Mermaid diagrams, and HPMPC project content through remote MCP.",
+      "version": "0.1.0",
+      "source": "hpm-pintool-helper",
+      "author": {
+        "name": "HPMicro"
+      },
+      "category": "Engineering"
+    }
+  ]
+}

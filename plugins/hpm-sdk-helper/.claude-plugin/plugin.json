@@ -1,0 +1,10 @@
+{
+  "name": "hpm-sdk-helper",
+  "description": "HPMicro SDK plugin for compiling and flashing programs based on hpm_sdk",
+  "version": "0.1.0",
+  "license": "MIT",
+  "skills": "./skills/",
+  "author": {
+    "name": "HPMicro"
+  }
+}

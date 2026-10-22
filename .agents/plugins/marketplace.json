@@ -1,0 +1,56 @@
+{
+  "name": "hpm-sdk-marketplace",
+  "interface": {
+    "displayName": "HPM SDK Marketplace"
+  },
+  "plugins": [
+    {
+      "name": "hpm-sdk-helper",
+      "source": {
+        "source": "local",
+        "path": "./plugins/hpm-sdk-helper"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Engineering"
+    },
+    {
+      "name": "hpm-mfgtool-helper",
+      "source": {
+        "source": "local",
+        "path": "./plugins/hpm-mfgtool-helper"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Engineering"
+    },
+    {
+      "name": "hpm-knowledgebase",
+      "source": {
+        "source": "local",
+        "path": "./plugins/hpm-knowledgebase"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Engineering"
+    },
+    {
+      "name": "hpm-pintool-helper",
+      "source": {
+        "source": "local",
+        "path": "./plugins/hpm-pintool-helper"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Engineering"
+    }
+  ]
+}

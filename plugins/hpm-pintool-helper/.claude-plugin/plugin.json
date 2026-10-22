@@ -1,0 +1,9 @@
+{
+  "name": "hpm-pintool-helper",
+  "version": "0.1.0",
+  "description": "Query HPMicro pinmux, TRGM, GPIOM, clocks, and PLA; generate C code, Mermaid diagrams, and HPMPC project content through remote MCP.",
+  "author": {
+    "name": "HPMicro"
+  },
+  "skills": "./skills/"
+}

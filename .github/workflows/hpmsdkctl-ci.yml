@@ -1,0 +1,41 @@
+name: hpmsdkctl CI
+on:
+  push:
+    branches:
+      - '**'
+    paths:
+      - 'mcp-servers/hpmsdkctl/**'
+      - '.github/workflows/hpmsdkctl-ci.yml'
+      - '.gitattributes'
+  pull_request:
+    paths:
+      - 'mcp-servers/hpmsdkctl/**'
+      - '.github/workflows/hpmsdkctl-ci.yml'
+      - '.gitattributes'
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: ['22', '24']
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: mcp-servers/hpmsdkctl
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+          cache-dependency-path: mcp-servers/hpmsdkctl/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run format:check
+      - run: npm run typecheck
+      - run: npm run build
+      - run: npm test
+      - run: npm pack --dry-run

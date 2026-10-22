@@ -1,0 +1,35 @@
+{
+  "name": "hpm-sdk-helper",
+  "displayName": "HPM SDK",
+  "version": "0.1.0",
+  "description": "HPMicro SDK plugin for compiling, configuring, debugging, and flashing programs based on hpm_sdk.",
+  "license": "MIT",
+  "keywords": [
+    "hpmicro",
+    "hpm-sdk",
+    "embedded",
+    "mcu",
+    "build",
+    "flash",
+    "debug"
+  ],
+  "author": {
+    "name": "HPMicro"
+  },
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "HPM SDK",
+    "shortDescription": "Build, configure, debug, and flash HPM SDK projects.",
+    "longDescription": "HPM SDK adds Cursor skills and an hpmsdkctl MCP server for HPMicro SDK environment setup, project build flows, OpenOCD configuration, firmware flashing, and GDB server startup.",
+    "developerName": "HPMicro",
+    "category": "Engineering",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "defaultPrompt": [
+      "Check my HPM SDK configuration",
+      "Build an HPM SDK sample",
+      "Flash firmware to an HPM board"
+    ],
+    "brandColor": "#0F766E"
+  }
+}

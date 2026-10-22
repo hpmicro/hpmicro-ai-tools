@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "hpm-knowledgebase-helper": {
+      "url": "https://kb.hpmicro.com/llm/mcp"
+    }
+  }
+}
