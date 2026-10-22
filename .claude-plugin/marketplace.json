@@ -1,6 +1,6 @@
 {
-  "name": "hpm-sdk-marketplace",
-  "description": "HPMicro SDK marketplace — tools for compiling and flashing programs based on hpm_sdk",
+  "name": "hpmicro-ai-tools",
+  "description": "HPMicro AI tools for SDK development, image programming, pin and clock configuration, and technical information lookup.",
   "owner": {
     "name": "HPMicro"
   },

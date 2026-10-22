@@ -31,10 +31,10 @@ Pin Tool 插件用于配置引脚、信号路由、时钟和可编程逻辑，�
 
 ```text
 /plugin marketplace add hpmicro/hpmicro-ai-tools
-/plugin install hpm-sdk-helper@hpm-sdk-marketplace
-/plugin install hpm-mfgtool-helper@hpm-sdk-marketplace
-/plugin install hpm-knowledgebase@hpm-sdk-marketplace
-/plugin install hpm-pintool-helper@hpm-sdk-marketplace
+/plugin install hpm-sdk-helper@hpmicro-ai-tools
+/plugin install hpm-mfgtool-helper@hpmicro-ai-tools
+/plugin install hpm-knowledgebase@hpmicro-ai-tools
+/plugin install hpm-pintool-helper@hpmicro-ai-tools
 ```
 
 参考 [marketplace 官方文档](https://code.claude.com/docs/en/plugin-marketplaces)。

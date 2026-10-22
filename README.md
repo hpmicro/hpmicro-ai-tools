@@ -31,10 +31,10 @@ Run in a Claude Code session and follow the installation/activation prompts:
 
 ```text
 /plugin marketplace add hpmicro/hpmicro-ai-tools
-/plugin install hpm-sdk-helper@hpm-sdk-marketplace
-/plugin install hpm-mfgtool-helper@hpm-sdk-marketplace
-/plugin install hpm-knowledgebase@hpm-sdk-marketplace
-/plugin install hpm-pintool-helper@hpm-sdk-marketplace
+/plugin install hpm-sdk-helper@hpmicro-ai-tools
+/plugin install hpm-mfgtool-helper@hpmicro-ai-tools
+/plugin install hpm-knowledgebase@hpmicro-ai-tools
+/plugin install hpm-pintool-helper@hpmicro-ai-tools
 ```
 
 See the [official marketplace documentation](https://code.claude.com/docs/en/plugin-marketplaces).
