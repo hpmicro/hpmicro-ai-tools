@@ -9,11 +9,11 @@ Requires Node.js 22.15+ and a separately installed HPM Manufacturing CMD. Suppor
 ## Install
 
 ```sh
-npm install -g hpmmfgctl --registry=https://registry.npmjs.org/
+npm install -g @hpmicro-tools/hpmmfgctl@0.0.1 --registry=https://registry.npmjs.org/
 hpmmfgctl --help
 ```
 
-Alternatively, use `npx --yes "hpmmfgctl@<version>"` to run a pinned version.
+Alternatively, use `npx --yes "@hpmicro-tools/hpmmfgctl@<version>"` to run a pinned version.
 
 Device discovery uses `@serialport/bindings-cpp` and `node-hid`, both of which contain native components. Environments without matching prebuilt binaries may need a native C/C++ build toolchain. Linux HID uses the hidraw backend and may also require udev rules or group permissions.
 
@@ -64,7 +64,7 @@ Pin a verified package version:
   "mcpServers": {
     "hpm-mfg-tool-ctl": {
       "command": "npx",
-      "args": ["--yes", "--registry=https://registry.npmjs.org/", "hpmmfgctl@<version>", "mcp"]
+      "args": ["--yes", "--registry=https://registry.npmjs.org/", "@hpmicro-tools/hpmmfgctl@<version>", "mcp"]
     }
   }
 }

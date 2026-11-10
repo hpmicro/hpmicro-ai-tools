@@ -9,11 +9,11 @@
 ## 安装
 
 ```sh
-npm install -g hpmmfgctl --registry=https://registry.npmjs.org/
+npm install -g @hpmicro-tools/hpmmfgctl@0.0.1 --registry=https://registry.npmjs.org/
 hpmmfgctl --help
 ```
 
-也可以使用 `npx --yes "hpmmfgctl@<version>"` 固定运行指定版本。
+也可以使用 `npx --yes "@hpmicro-tools/hpmmfgctl@<version>"` 固定运行指定版本。
 
 设备发现依赖 `@serialport/bindings-cpp` 和 `node-hid`，两者均包含原生组件。没有适用预编译文件的环境可能需要 C/C++ 原生构建工具链。Linux HID 使用 hidraw 后端，可能还需要配置 udev 规则或用户组权限。
 
@@ -63,7 +63,7 @@ CMD 路径本身可以包含空格。读取不存在的配置文件会得到空�
   "mcpServers": {
     "hpm-mfg-tool-ctl": {
       "command": "npx",
-      "args": ["--yes", "--registry=https://registry.npmjs.org/", "hpmmfgctl@<version>", "mcp"]
+      "args": ["--yes", "--registry=https://registry.npmjs.org/", "@hpmicro-tools/hpmmfgctl@<version>", "mcp"]
     }
   }
 }

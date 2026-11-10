@@ -86,7 +86,7 @@ git clone https://github.com/hpmicro/hpmicro-ai-tools.git
 插件用户不需要自行编译源码。也可以单独安装命令行工具：
 
 ```sh
-npm install -g hpmsdkctl --registry=https://registry.npmjs.org/
+npm install -g @hpmicro-tools/hpmsdkctl@0.0.1 --registry=https://registry.npmjs.org/
 hpmsdkctl --help
 hpmsdkctl --version
 hpmsdkctl config init --sdk-env /path/to/sdk_env
@@ -101,13 +101,13 @@ hpmsdkctl config check
     "hpm-sdk-ctl": {
       "type": "stdio",
       "command": "npx",
-      "args": ["--yes", "--registry=https://registry.npmjs.org/", "hpmsdkctl", "mcp"]
+      "args": ["--yes", "--registry=https://registry.npmjs.org/", "@hpmicro-tools/hpmsdkctl@0.0.1", "mcp"]
     }
   }
 }
 ```
 
-如需固定 MCP 版本，将参数中的 `hpmsdkctl` 替换为 `hpmsdkctl@<version>`。
+CLI 安装与 MCP 配置使用同一个带 scope 的包，均固定为 `0.0.1`。可执行命令仍为 `hpmsdkctl`。使用其他发布版本时，请同步调整两处版本。
 
 ## 直接使用 hpmmfgctl
 
@@ -125,7 +125,7 @@ hpmsdkctl config check
 }
 ```
 
-请根据操作系统调整路径。发布对应 npm 版本后，插件使用 `npx --yes --registry=https://registry.npmjs.org/ hpmmfgctl@0.1.0 mcp` 启动。先调用 `mfg.doctor` 检查环境，通过 `mfg.set` 配置 CMD，再发现设备并创建 Target，之后执行 ROM 操作。目前仅支持 stdio 传输。
+请根据操作系统调整路径。插件使用 `npx --yes --registry=https://registry.npmjs.org/ @hpmicro-tools/hpmmfgctl@0.0.1 mcp` 启动。先调用 `mfg.doctor` 检查环境，通过 `mfg.set` 配置 CMD，再发现设备并创建 Target，之后执行 ROM 操作。目前仅支持 stdio 传输。
 
 ## 使用示例
 
@@ -191,7 +191,7 @@ node dist/main.js --help
 插件更新和 npm 发布是两条独立流程：
 
 - 插件更新：调整相关 manifest 与 marketplace 的版本，用户通过客户端刷新并更新。 Cursor 本地安装需要重新复制文件。
-- CLI 更新：执行 `npm install -g hpmsdkctl@latest --registry=https://registry.npmjs.org/`。
+- CLI 更新：执行 `npm install -g @hpmicro-tools/hpmsdkctl@latest --registry=https://registry.npmjs.org/`。
 - MCP 更新：在客户端配置中选择需要的包版本，然后重启服务。固定版本不会自动升级。
 
 `hpmsdkctl CI` 在匹配路径的分支推送和 PR 时触发，使用 Windows、macOS、Linux 与 Node.js 22 / 24 检查 lint、格式、类型、构建、测试和包内容，但不会发布。仅修改根 README 不会触发这份 CI。
@@ -224,7 +224,7 @@ workflow 使用 GitHub Environment `npm`。npm Trusted Publisher 必须匹配 `h
 - 构建或烧录失败：执行 `hpmsdkctl config check`，核对工具路径。
 - 镜像烧写操作失败：使用 `hpm-mfgtool-setup` 检查 CMD 配置并重新连接设备，详见[插件排查说明](plugins/hpm-mfgtool-helper/README.zh-CN.md#排查与验证范围)。
 - CI 成功但 npm 未更新：检查 **Publish hpmsdkctl**，而不只是测试 CI。
-- 不确定已发布版本：执行 `npm view hpmsdkctl version --registry=https://registry.npmjs.org/`。镜像源或网页缓存可能暂时显示旧信息。查询镜像烧写包时将包名替换为 `hpmmfgctl`。
+- 不确定已发布版本：执行 `npm view @hpmicro-tools/hpmsdkctl version --registry=https://registry.npmjs.org/`。镜像源或网页缓存可能暂时显示旧信息。查询镜像烧写包时将包名替换为 `@hpmicro-tools/hpmmfgctl`。
 - OIDC 被拒绝：检查 Trusted Publisher 的身份、环境及直接发布权限。
 
 ## 参与贡献

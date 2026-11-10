@@ -9,15 +9,15 @@
 - Windows x64 或 Linux x86_64，Node.js **22.15+**，以及 `PATH` 中的 `npm`/`npx`。
 - 支持插件/stdio MCP 的客户端，以及单独安装的 `hpm_manufacturing_cmd`；这些 ROM 工作流不依赖 SDK 构建工具链。
 - 通过串口或 HID 连接、已进入相应 ROM 启动模式的目标设备。
-- 能访问 npm 源，下载插件固定使用的 `hpmmfgctl@0.1.0`。
+- 能访问 npm 源，下载插件固定使用的 `@hpmicro-tools/hpmmfgctl@0.0.1`。
 
 按[仓库安装说明](../../README.zh-CN.md#安装插件)安装插件。 [.mcp.json](.mcp.json) 配置启动以下命令：
 
 ```text
-npx --yes --registry=https://registry.npmjs.org/ hpmmfgctl@0.1.0 mcp
+npx --yes --registry=https://registry.npmjs.org/ @hpmicro-tools/hpmmfgctl@0.0.1 mcp
 ```
 
-服务端独立发布，分发插件前需先发布对应 npm 版本。本地源码开发可直接运行构建后的服务，见[包级 MCP 说明](../../mcp-servers/hpmmfgctl/README.zh-CN.md)。当前实现仅支持 stdio 传输。
+服务端以 `@hpmicro-tools/hpmmfgctl` 独立发布，插件固定使用 `0.0.1`。本地源码开发可直接运行构建后的服务，见[包级 MCP 说明](../../mcp-servers/hpmmfgctl/README.zh-CN.md)。当前实现仅支持 stdio 传输。
 
 设备发现使用原生串口/HID 模块；没有匹配预编译二进制的环境可能需要 C/C++ 工具链。 Linux HID 访问还可能需要 udev 规则或用户组权限。
 

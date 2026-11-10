@@ -1,6 +1,6 @@
 {
   "name": "hpm-mfgtool-helper",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "description": "Discover HPM devices and perform manufacturing ROM operations through the installed Manufacturing CMD.",
   "author": {
     "name": "HPMicro"

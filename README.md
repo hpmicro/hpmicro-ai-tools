@@ -86,7 +86,7 @@ Restart Cursor or run `Developer: Reload Window`, then open **Customize** to che
 No source build is needed for plugin users. To install the CLI independently:
 
 ```sh
-npm install -g hpmsdkctl --registry=https://registry.npmjs.org/
+npm install -g @hpmicro-tools/hpmsdkctl@0.0.1 --registry=https://registry.npmjs.org/
 hpmsdkctl --help
 hpmsdkctl --version
 hpmsdkctl config init --sdk-env /path/to/sdk_env
@@ -101,13 +101,13 @@ For a compatible MCP client, use the plugin's server definition below. Adapt the
     "hpm-sdk-ctl": {
       "type": "stdio",
       "command": "npx",
-      "args": ["--yes", "--registry=https://registry.npmjs.org/", "hpmsdkctl", "mcp"]
+      "args": ["--yes", "--registry=https://registry.npmjs.org/", "@hpmicro-tools/hpmsdkctl@0.0.1", "mcp"]
     }
   }
 }
 ```
 
-To pin a reproducible MCP version, replace `hpmsdkctl` with `hpmsdkctl@<version>`.
+The CLI install and MCP configuration use the same scoped package, pinned to `0.0.1`. The executable name remains `hpmsdkctl`. To use another release, update both versions together.
 
 ## Use hpmmfgctl directly
 
@@ -125,7 +125,7 @@ To pin a reproducible MCP version, replace `hpmsdkctl` with `hpmsdkctl@<version>
 }
 ```
 
-Use paths appropriate to your operating system. Once the package version is published, the plugin uses `npx --yes --registry=https://registry.npmjs.org/ hpmmfgctl@0.1.0 mcp`. Start with `mfg.doctor`, configure CMD with `mfg.set`, then discover and create a target before ROM operations. Only stdio transport is currently supported.
+Use paths appropriate to your operating system. The plugin uses `npx --yes --registry=https://registry.npmjs.org/ @hpmicro-tools/hpmmfgctl@0.0.1 mcp`. Start with `mfg.doctor`, configure CMD with `mfg.set`, then discover and create a target before ROM operations. Only stdio transport is currently supported.
 
 ## Example prompts
 
@@ -191,7 +191,7 @@ See the package README for architecture and optional SDK/reference tests. For Ma
 Plugin updates and npm releases are separate:
 
 - Plugin: update relevant manifest and marketplace versions, then refresh/update through the client. Cursor local installations require copying the files again.
-- CLI: run `npm install -g hpmsdkctl@latest --registry=https://registry.npmjs.org/`.
+- CLI: run `npm install -g @hpmicro-tools/hpmsdkctl@latest --registry=https://registry.npmjs.org/`.
 - MCP: select the intended package version in client configuration and restart the server. A pinned version does not update automatically.
 
 `hpmsdkctl CI` runs for matching branch pushes and pull requests on Windows, macOS, and Linux with Node.js 22 and 24. It checks lint, formatting, types, build, tests, and package contents, but does not publish. Root README-only changes do not trigger this CI.
@@ -224,7 +224,7 @@ The workflow uses GitHub Environment `npm`. npm Trusted Publisher must match `hp
 - Build/flash failure: run `hpmsdkctl config check` and check tool paths.
 - Manufacturing failure: use `hpm-mfgtool-setup` to check CMD configuration and reconnect to the device. See the [plugin guide](plugins/hpm-mfgtool-helper/README.md#troubleshooting-and-verification).
 - CI passed but npm unchanged: inspect **Publish hpmsdkctl**, not only the test CI.
-- Version unclear: run `npm view hpmsdkctl version --registry=https://registry.npmjs.org/`. Mirror or website caches may temporarily show older information. Substitute `hpmmfgctl` to check the Manufacturing package.
+- Version unclear: run `npm view @hpmicro-tools/hpmsdkctl version --registry=https://registry.npmjs.org/`. Mirror or website caches may temporarily show older information. Substitute `@hpmicro-tools/hpmmfgctl` to check the Manufacturing package.
 - OIDC denied: check Trusted Publisher identity, environment, and direct publish permission.
 
 ## Contributing

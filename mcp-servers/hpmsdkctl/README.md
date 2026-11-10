@@ -9,11 +9,11 @@ Requires Node.js 22.15+ and locally installed HPM SDK, CMake, Ninja, Python, RIS
 ## Install
 
 ```sh
-npm install -g hpmsdkctl --registry=https://registry.npmjs.org/
+npm install -g @hpmicro-tools/hpmsdkctl@0.0.1 --registry=https://registry.npmjs.org/
 hpmsdkctl --help
 ```
 
-Alternatively, use `npx --yes "hpmsdkctl@<version>"` to run a pinned version.
+Alternatively, use `npx --yes "@hpmicro-tools/hpmsdkctl@<version>"` to run a pinned version.
 
 ## CLI
 
@@ -224,7 +224,7 @@ Pin a verified package version:
   "mcpServers": {
     "hpm-sdk-ctl": {
       "command": "npx",
-      "args": ["--yes", "hpmsdkctl@<version>", "mcp"]
+      "args": ["--yes", "@hpmicro-tools/hpmsdkctl@<version>", "mcp"]
     }
   }
 }

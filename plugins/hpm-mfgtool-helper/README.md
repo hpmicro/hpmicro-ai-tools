@@ -9,15 +9,15 @@
 - Windows x64 or Linux x86_64, with Node.js **22.15+** and `npm`/`npx` in `PATH`.
 - A compatible plugin/stdio MCP client and a separately installed `hpm_manufacturing_cmd`; no SDK build toolchain is required for these ROM workflows.
 - A target device in the appropriate ROM boot mode, connected over serial or HID.
-- npm registry access for the plugin's pinned `hpmmfgctl@0.1.0` package.
+- npm registry access for the plugin's pinned `@hpmicro-tools/hpmmfgctl@0.0.1` package.
 
 Install the plugin using the [repository instructions](../../README.md#install-plugins). The [.mcp.json](.mcp.json) entry starts:
 
 ```text
-npx --yes --registry=https://registry.npmjs.org/ hpmmfgctl@0.1.0 mcp
+npx --yes --registry=https://registry.npmjs.org/ @hpmicro-tools/hpmmfgctl@0.0.1 mcp
 ```
 
-The server is published separately; the pinned npm version must be published before distribution. Local source development can instead run the built server as described in the [package README](../../mcp-servers/hpmmfgctl/README.md#mcp). Only stdio transport is supported by the current implementation.
+The server is published separately as `@hpmicro-tools/hpmmfgctl`; the plugin pins version `0.0.1`. Local source development can instead run the built server as described in the [package README](../../mcp-servers/hpmmfgctl/README.md#mcp). Only stdio transport is supported by the current implementation.
 
 Discovery uses native serial/HID modules. Environments without matching prebuilt binaries may need a C/C++ build toolchain. Linux HID access may require udev rules or group permissions.
 

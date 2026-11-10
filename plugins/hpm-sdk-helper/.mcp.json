@@ -6,7 +6,7 @@
       "args": [
         "--yes",
         "--registry=https://registry.npmjs.org/",
-        "@hpmicro-tools/hpmsdkctl",
+        "@hpmicro-tools/hpmsdkctl@0.0.1",
         "mcp"
       ]
     }

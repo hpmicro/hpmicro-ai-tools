@@ -9,11 +9,11 @@
 ## 安装
 
 ```sh
-npm install -g hpmsdkctl --registry=https://registry.npmjs.org/
+npm install -g @hpmicro-tools/hpmsdkctl@0.0.1 --registry=https://registry.npmjs.org/
 hpmsdkctl --help
 ```
 
-也可以使用 `npx --yes "hpmsdkctl@<version>"` 固定运行指定版本。
+也可以使用 `npx --yes "@hpmicro-tools/hpmsdkctl@<version>"` 固定运行指定版本。
 
 ## CLI
 
@@ -224,7 +224,7 @@ hpmsdkctl mcp
   "mcpServers": {
     "hpm-sdk-ctl": {
       "command": "npx",
-      "args": ["--yes", "hpmsdkctl@<version>", "mcp"]
+      "args": ["--yes", "@hpmicro-tools/hpmsdkctl@<version>", "mcp"]
     }
   }
 }

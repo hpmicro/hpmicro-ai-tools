@@ -4,9 +4,9 @@
       "type": "stdio",
       "command": "npx",
       "args": [
-        "--yes", 
-        "--registry=https://registry.npmjs.org/", 
-        "@hpmicro-tools/hpmmfgctl", 
+        "--yes",
+        "--registry=https://registry.npmjs.org/",
+        "@hpmicro-tools/hpmmfgctl@0.0.1",
         "mcp"
       ]
     }
